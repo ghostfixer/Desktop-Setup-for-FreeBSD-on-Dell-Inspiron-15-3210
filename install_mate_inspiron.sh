@@ -7,7 +7,7 @@ sudo freebsd-update fetch install || true
 sudo pkg update && sudo pkg upgrade -y
 
 echo ">>> Installing MATE desktop and LightDM..."
-sudo pkg install -y xorg mate mate-utils mate-terminal lightdm lightdm-gtk-greeter
+sudo pkg install -y xorg mate mate-utils mate-terminal lightdm lightdm-gtk-greeter xf86-video-intel
 
 echo ">>> Installing Intel graphics driver..."
 sudo pkg install -y drm-kmod
