@@ -11,7 +11,7 @@ sudo pkg install -y xorg mate mate-utils mate-terminal lightdm lightdm-gtk-greet
 
 echo ">>> Installing Intel graphics driver..."
 sudo pkg install -y drm-kmod
-sudo sysrc kld_list="i915kms"
+sudo sysrc kld_list="/boot/modules/i915kms"
 
 echo ">>> Configuring loader.conf for proper VT handling..."
 echo 'kern.vty=vt' | sudo tee -a /boot/loader.conf
