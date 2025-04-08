@@ -6,12 +6,16 @@ This script automates the installation and configuration of the MATE desktop env
 
 ## ✅ Features
 
-- Installs MATE desktop and LightDM display manager
-- Sets up Intel graphics (i915kms) for optimal performance
+- Prompts to install either **MATE** or **Xfce**
+- Installs LightDM as the display manager
+- Sets up Intel graphics (`i915kms`)
+- Loads the graphics driver and updates loader configuration
 - Enables Synaptics touchpad with tapping and scrolling
-- Installs and runs `xconfig` to generate `xorg.conf`
-- Enables required services: `dbus`, `hald`, `lightdm`
-- Sets `~/.xinitrc` to start MATE session (for `startx` users)
+- Installs and runs GhostBSD’s `xconfig` to auto-generate `xorg.conf`
+- Enables required services: `dbus`, `hald`, `lightdm`, `powerd`
+- Creates ZFS boot environment for rollback (if supported)
+- Creates a user (if not already present) and adds them to the `video` group
+- Sets the correct `~/.xinitrc` for the selected desktop
 
 ---
 
@@ -25,12 +29,20 @@ This script automates the installation and configuration of the MATE desktop env
 
 ## 📦 Packages Installed
 
+Common:
 - `xorg`
-- `mate`, `mate-utils`, `mate-terminal`
 - `lightdm`, `lightdm-gtk-greeter`
-- `drm-kmod` (for i915 graphics)
-- `xf86-input-synaptics` (for touchpad)
-- Git (to fetch `xconfig`)
+- `drm-kmod` (Intel graphics)
+- `xf86-input-synaptics` (touchpad)
+- `git` (to fetch `xconfig`)
+- `noto-basic`
+- `noto-emoji`
+
+MATE-specific:
+- `mate`, `mate-utils`, `mate-terminal`, `pluma`, `engrampa`, `eom`, `file-roller`, `atril`, `caja`, `galculator`
+
+Xfce-specific:
+- `xfce`, `xfce4-terminal`, `xfce4-goodies`, `thunar-archive-plugin`, `mousepad`, `galculator`
 
 ---
 
@@ -40,8 +52,8 @@ This script automates the installation and configuration of the MATE desktop env
 
 ```sh
 su
-fetch -o install_mate_inspiron.sh https://github/ghostfixer/install_mate_inspiron.sh
-chmod +x install_mate_inspiron.sh
+fetch -o install_mate_inspiron.sh https://github/ghostfixer/install_desktop_inspiron.sh
+chmod +x install_desktop_inspiron.sh
 ```
 
 > Replace the URL with the actual location if hosted online.
@@ -49,7 +61,7 @@ chmod +x install_mate_inspiron.sh
 ### 2. Run the script
 
 ```sh
-./install_mate_inspiron.sh
+./install_desktop_inspiron.sh
 ```
 
 ### 3. Reboot
