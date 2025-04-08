@@ -47,7 +47,7 @@ case "$desktop_choice" in
 esac
 
 echo ">>> Installing $DESKTOP desktop and LightDM..."
-pkg install -y xorg $DESKTOP_PKGS lightdm lightdm-gtk-greeter xf86-video-intel || \
+pkg install -y xorg $DESKTOP_PKGS lightdm lightdm-gtk-greeter xf86-video-intel noto-basic noto-emoji || \
   error_exit "Failed to install desktop components"
 
 echo ">>> Installing Intel graphics driver..."
@@ -125,10 +125,6 @@ if [ -d "$user_home" ]; then
 else
   error_exit "Home directory for user '$video_user' not found."
 fi
-
-# Optional: better font rendering (commented out)
-# echo ">>> Installing optional font packages (uncomment to enable)"
-# pkg install -y noto-basic noto-emoji
 
 echo ">>> All done! You can now reboot."
 echo "Use 'startx' or wait for LightDM to launch $DESKTOP."
