@@ -79,9 +79,12 @@ startx
 
 ## 🛠️ Notes
 
-- The script sets `kern.vty=vt` in `/boot/loader.conf` for graphical console support.
-- `xconfig` from GhostBSD is used to auto-generate `/etc/X11/xorg.conf` based on hardware.
-- For wireless support, you may need to install additional Wi-Fi firmware depending on your chipset.
+- Sets kern.vty=vt in /boot/loader.conf for proper graphical console support
+- Loads the i915kms module immediately if possible
+- xconfig detects hardware and generates /etc/X11/xorg.conf accordingly
+- Uses bectl to create a boot environment named pre-desktop-setup if on ZFS
+- Automatically sets up power management via powerd
+- Will create the user if they do not exist and add them to the appropriate groups
 
 ---
 
