@@ -39,6 +39,7 @@ This script automates the installation and configuration of the MATE desktop env
 ### 1. Download the script
 
 ```sh
+su
 fetch -o install_mate_inspiron.sh https://github/ghostfixer/install_mate_inspiron.sh
 chmod +x install_mate_inspiron.sh
 ```
