@@ -1,6 +1,6 @@
-# MATE Desktop Setup for FreeBSD on Dell Inspiron 15-3210
+# Desktop Setup for FreeBSD on Dell Inspiron 15-3210
 
-This script automates the installation and configuration of the MATE desktop environment on FreeBSD, specifically tuned for the Dell Inspiron 15-3210 laptop. It includes proper graphics driver setup, touchpad support, and automatic X11 configuration using GhostBSD’s `xconfig`.
+This script automates the installation and configuration of a MATE or Xfce desktop environment on FreeBSD, specifically tuned for the Dell Inspiron 15-3210 laptop. It includes proper graphics driver setup, touchpad support, and automatic X11 configuration using GhostBSD’s `xconfig`.
 
 ---
 
